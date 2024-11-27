@@ -6,6 +6,13 @@ import cv2
 import numpy as np
 import time
 import os
+import gdown
+
+def download_model_from_drive():
+    url = 'https://drive.google.com/file/d/1W54xonnkYjeKqqnltCe_iz2tFX7OjCGb/view?usp=sharing'  # Replace with your file's ID
+    output = 'best_model.pth'
+    gdown.download(url, output, quiet=False)
+    return output
 
 # Load the pre-trained model
 def load_model(model_path):
@@ -47,7 +54,7 @@ def crop_image(image, x, y, width, height):
 def main():
     st.title("AI Detection for Clamp")
 
-    model_path = "E:\\BSH-Clamp\\best_model.pth"  
+    model_path = download_model_from_drive 
     if not os.path.exists(model_path):
         st.error("Error in the 'best_model.pth' file's path.\nEnsure the path of the file is in the same directory")
         return
