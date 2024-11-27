@@ -9,7 +9,7 @@ import os
 import gdown
 
 def download_model_from_drive():
-    url = 'https://drive.google.com/file/d/1W54xonnkYjeKqqnltCe_iz2tFX7OjCGb/view?usp=sharing'  # Replace with your file's ID
+    url = 'https://drive.google.com/uc?export=download&id=1W54xonnkYjeKqqnltCe_iz2tFX7OjCGb'  # Replace with your file's ID
     output = 'best_model.pth'
     gdown.download(url, output, quiet=False)
     return output
