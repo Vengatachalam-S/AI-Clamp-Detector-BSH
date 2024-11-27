@@ -54,7 +54,7 @@ def crop_image(image, x, y, width, height):
 def main():
     st.title("AI Detection for Clamp")
 
-    model_path = download_model_from_drive 
+    model_path = download_model_from_drive()
     if not os.path.exists(model_path):
         st.error("Error in the 'best_model.pth' file's path.\nEnsure the path of the file is in the same directory")
         return
